@@ -1,5 +1,6 @@
 import React from "react";
-import { H1, Div, P } from 'glamorous'
+import { H1, Div, P, H3, Span } from 'glamorous'
+import Link from 'gatsby-link'
 
 import Container from '../components/Container'
 import Polaroid from '../components/Poloroid'
@@ -7,7 +8,7 @@ import Button from '../components/Button'
 
 import mugshot from '../assets/img/Mugshot.jpg'
 
-export default () => (
+export default ({ data }) => (
   <div>
     <Div backgroundColor={'#2196f3'}>
       <Container>
@@ -37,10 +38,43 @@ export default () => (
     </Div>
 
     <Container>
-      <H1 marginTop='3rem'
+      <H1 margin='3rem 0'
           textAlign='center'>My Work</H1>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id}>
+          <Link
+          to={node.fields.slug}
+          css={{ textDecoration: `none`, color: `inherit` }}>
+          <H3>
+            {node.frontmatter.title}{" "}
+            <Span color="#BBB">— {node.frontmatter.date}</Span>
+          </H3>
+          <p>{node.excerpt}</p>
+          </Link>
+        </div>
+      ))}
     </Container>
   </div>
 
 );
 
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+           fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
