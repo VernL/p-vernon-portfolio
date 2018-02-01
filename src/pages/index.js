@@ -8,7 +8,8 @@ import Button from '../components/Button'
 
 export default ({ data }) => (
   <div>
-    <Div backgroundColor={'#2196f3'}>
+    <Div backgroundColor={'#2196f3'}
+         marginTop={'60px'}>
       <Container>
       <Div display='flex'
            flexWrap='wrap'
@@ -39,17 +40,19 @@ export default ({ data }) => (
       <H1 margin='3rem 0'
           textAlign='center'>My Work</H1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
+        <Div key={node.id}
+             css={{':hover':{borderLeft: '5px solid #6ec6ff'}}}
+             borderLeft='5px solid white'>
           <Link
           to={node.fields.slug}
-          css={{ textDecoration: `none`, color: `inherit` }}>
+          css={{ textDecoration: 'none', color: 'inherit'}}>
           <H3>
             {node.frontmatter.title}{" "}
             <Span color="#BBB">— {node.frontmatter.date}</Span>
           </H3>
           <p>{node.excerpt}</p>
           </Link>
-        </div>
+        </Div>
       ))}
     </Container>
   </div>
