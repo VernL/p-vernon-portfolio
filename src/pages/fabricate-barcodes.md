@@ -6,7 +6,7 @@ link: "https://www.fabricateinc.com/barcodes"
 
 [Fabricate Barcodes](https://www.fabricateinc.com/barcodes) is an online storefront that sells barcodes. I was the backend developer and created an application written in JavaScript using Node.js. The application listens for incoming transactions, verifies and processes those transaction and finally emails the purchased barcodes to the client. Available barcodes are stored in an Amazon S3 bucket and transaction data is stored in a MongoDB database hosted on mlabs.com. The project is hosted on Heroku. A diagram of the application is presented in the figure below.
 
-![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180131122822338.png)
+![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180131211608737.png)
 
 An overview of my work is detailed in the sections below.
 
