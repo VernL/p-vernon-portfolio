@@ -6,8 +6,6 @@ import Container from '../components/Container'
 import Polaroid from '../components/Poloroid'
 import Button from '../components/Button'
 
-import mugshot from '../assets/img/Mugshot.jpg'
-
 export default ({ data }) => (
   <div>
     <Div backgroundColor={'#2196f3'}>
@@ -21,7 +19,7 @@ export default ({ data }) => (
            margin='0 auto'>
         <Div flexBasis= '300px'
              margin='1rem' >
-          <Polaroid img={mugshot} title='Vernon' />
+          <Polaroid img='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Mugshot.jpg' title='Vernon' />
         </Div>
       <Div flexBasis='450px'
            backgroundColor='#6ec6ff'
@@ -30,7 +28,7 @@ export default ({ data }) => (
         <p>Full stack developer with a love for flying robots, Cleantech, and weekly food specials. Always learning new skills and giving 100% to get the job done.</p>
         <Div display='flex'
              justifyContent='center'>
-          <Button>Download CV (PDF)</Button>
+          <a href='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Vernon.lillies_CV.pdf' download><Button>Download CV (PDF)</Button></a>
         </Div>
       </Div>
       </Div>
