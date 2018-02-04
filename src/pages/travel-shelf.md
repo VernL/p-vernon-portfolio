@@ -4,11 +4,11 @@ date: "2018-01-30"
 link: "https://www.fabricateinc.com/barcodes"
 ---
 
-In fall 2017, I joined the [LAB12](https://www.pitonneux.org/lab12/) self directed learning program. The program's main focus was to join a team and build a project. Along with a tone of programming experience, I learned and applied agile development workflows and used github to effectively collaborate with my team. LAB12 was a tone of fun and I highly recommend it to anyone looking to level up their coding skills. Just be prepared to put in a tone to get your team across the finish line.
+In fall 2017, I joined the [LAB12](https://www.pitonneux.org/lab12/) self directed learning program. The program's main focus was to collaborate with a team and build a project. Along with a ton of programming experience, I learned agile development workflows and how to use github effectively. LAB12 was a lot of fun and I highly recommend it to anyone looking to level up their coding skills. Just be prepared to put in long hours to get your team across the finish line.
 
 ![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180203214520580.png)
 
-[The Travel Shelf](www.thetravelshelf.com) was born out of the LAB12 program. It's an open source project aiming to promote independent bookstores around the world. I worked on every aspect of the project including coding for the frontend and backend, working on the design, creating user stories and managing the team. We created a single page application written in JavaScript using React with Redux on the frontend and a Node/Express backend. An overview of the project is shown in the diagram below.
+[The Travel Shelf](www.thetravelshelf.com) was born out of the LAB12 program. It's an open source project aiming to promote independent bookstores around the world. I worked on every aspect of the project including coding for the frontend and backend, creating user stories and managing the team. We created a single page application written in JavaScript using React with Redux on the frontend and a Node/Express backend. An overview of the project is shown in the diagram below.
 
 ![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180203132819961.png)
 
@@ -42,7 +42,7 @@ router.post('/', function (req, res, next) {
 module.exports = router
 ```
 
-On the client side, the redux thunk middleware was ysed to dispatch asynchronous actions and load data into the Redux store:
+On the client side, the redux thunk middleware was used to dispatch asynchronous actions and load data into the Redux store:
 
 ```javascript
 import * as actionTypes from './actionTypes'

@@ -38,17 +38,17 @@ export default ({ data }) => (
 
     <Container>
       <H1 margin='3rem 0'
-          textAlign='center'>My Work</H1>
+          textAlign='center'>Projects</H1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Div key={node.id}
              css={{':hover':{borderLeft: '5px solid #6ec6ff'}}}
-             borderLeft='5px solid white'>
+             borderLeft='5px solid white'
+             margin='1.5rem 0'>
           <Link
           to={node.fields.slug}
           css={{ textDecoration: 'none', color: 'inherit'}}>
           <H3>
             {node.frontmatter.title}{" "}
-            <Span color="#BBB">— {node.frontmatter.date}</Span>
           </H3>
           <p>{node.excerpt}</p>
           </Link>
