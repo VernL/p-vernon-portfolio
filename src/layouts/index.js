@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'gatsby-link'
-
+require("prismjs/themes/prism.css")
 import './index.css'
 
 export default ({ children, data }) => (
