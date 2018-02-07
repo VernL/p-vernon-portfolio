@@ -1,5 +1,5 @@
 import React from "react";
-import { H1, Div, P, H3, Span } from 'glamorous'
+import { H1, Div, H3, P} from 'glamorous'
 import Link from 'gatsby-link'
 
 import Container from '../components/Container'
@@ -8,8 +8,8 @@ import Button from '../components/Button'
 
 export default ({ data }) => (
   <div>
-    <Div backgroundColor={'#2196f3'}
-         marginTop={'60px'}>
+    <Div backgroundColor='#2196f3'
+         marginTop='60px'>
       <Container>
       <Div display='flex'
            flexWrap='wrap'
@@ -26,10 +26,12 @@ export default ({ data }) => (
            backgroundColor='#6ec6ff'
            boxShadow='10px 10px 10px 0px rgba(0, 0, 0, 0.4)'
            margin='1rem'>
-        <p>Full stack developer with a love for flying robots, Cleantech, and weekly food specials. Always learning new skills and giving 100% to get the job done.</p>
+        <P margin='1rem'>Full stack developer with a love for flying robots, Cleantech, and weekly food specials. Always learning new skills and giving 100% to get the job done.</P>
         <Div display='flex'
              justifyContent='center'>
-          <a href='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Vernon.lillies_CV.pdf' download><Button>Download CV (PDF)</Button></a>
+          <a href='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Vernon.lillies_CV.pdf' download>
+            <Button>Download CV (PDF)</Button>
+          </a>
         </Div>
       </Div>
       </Div>
@@ -47,7 +49,7 @@ export default ({ data }) => (
           <Link
           to={node.fields.slug}
           css={{ textDecoration: 'none', color: 'inherit'}}>
-          <H3>
+          <H3 margin='0'>
             {node.frontmatter.title}{" "}
           </H3>
           <p>{node.excerpt}</p>

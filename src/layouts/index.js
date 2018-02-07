@@ -1,15 +1,25 @@
 import React from "react";
 import Link from 'gatsby-link'
+import {Div, H3 } from 'glamorous'
 require("prismjs/themes/prism.css")
-import './index.css'
 
 export default ({ children, data }) => (
 <div>
-  <div style={{display: 'flex', alignItems: 'center', height: '60px', marginTop: '0', backgroundColor: '#6ec6ff', position:'fixed', width: '100%', top: '0'}}>
-    <div style={{flexBasis: '960px', margin: '0 auto'}}>
-      <Link to='/'><h3 style={{margin: '0'}}>{data.site.siteMetadata.title}</h3></Link>
-    </div>
-  </div>
+  <Div display='flex'
+       alignItems='center'
+       height='60px'
+       marginTop='0'
+       backgroundColor='#6ec6ff'
+       position='fixed'
+       width='100%'
+       top='0'>
+    <Div flexBasis='960px'
+         margin='0 auto'>
+      <Link to='/'>
+        <H3 margin='0'>{data.site.siteMetadata.title}</H3>
+      </Link>
+    </Div>
+  </Div>
     {children()}
 </div>
 )

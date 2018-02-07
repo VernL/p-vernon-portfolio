@@ -9,10 +9,10 @@ export default (props) => (
   outline='none'
   cursor='pointer'
   font='inherit'
-  padding='10px'
-  margin='10px'
-  font-weight='bold'
-  border-radius='25px'
+  padding='.5rem'
+  marginBottom='1rem'
+  fontWeight='bold'
+  borderRadius='25px'
   css={{':hover': {
     backgroundColor: '#80e27e'
   }
