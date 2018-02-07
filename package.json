@@ -18,6 +18,7 @@
     "gatsby-source-filesystem": "^1.5.16",
     "gatsby-transformer-remark": "^1.7.30",
     "glamorous": "^4.11.4",
+    "react-icons": "^2.2.7",
     "typography-theme-bootstrap": "^0.16.7",
     "typography-theme-lawton": "^0.15.10",
     "typography-theme-parnassus": "^0.15.10"

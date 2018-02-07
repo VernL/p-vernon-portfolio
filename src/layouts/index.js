@@ -1,7 +1,9 @@
 import React from "react";
 import Link from 'gatsby-link'
 import {Div, H3 } from 'glamorous'
-require("prismjs/themes/prism.css")
+import Social from '../components/Social'
+
+import 'prismjs/themes/prism.css'
 
 export default ({ children, data }) => (
 <div>
@@ -14,10 +16,13 @@ export default ({ children, data }) => (
        width='100%'
        top='0'>
     <Div flexBasis='960px'
-         margin='0 auto'>
-      <Link to='/'>
+         margin='0 auto'
+         display='flex'
+      alignItems='center'>
+      <Link to='/' style={{boxShadow: 'none'}}>
         <H3 margin='0'>{data.site.siteMetadata.title}</H3>
       </Link>
+      <Social/>
     </Div>
   </Div>
     {children()}
