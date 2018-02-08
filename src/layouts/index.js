@@ -1,5 +1,6 @@
 import React from "react";
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import {Div, H3 } from 'glamorous'
 import Social from '../components/Social'
 
@@ -7,6 +8,8 @@ import 'prismjs/themes/prism.css'
 
 export default ({ children, data }) => (
 <div>
+  <Helmet
+    title={data.site.siteMetadata.title}/>
   <Div display='flex'
        alignItems='center'
        height='60px'

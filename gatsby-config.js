@@ -31,6 +31,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-glamor`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
