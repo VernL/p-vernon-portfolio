@@ -5,9 +5,12 @@ import { H1, Div } from 'glamorous'
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Div   marginTop={'94px'}>
+    <Div marginTop='94px'>
     <Container>
-      <H1 margin={'1rem 17px'} marginTop={'2rem'}>{post.frontmatter.title}</H1>
+      <H1 margin='1rem 0'
+          marginTop='2rem'>
+        {post.frontmatter.title}
+      </H1>
       <Div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Container>
     </Div>

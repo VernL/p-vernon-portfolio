@@ -15,7 +15,7 @@ export default (props) => (
          justifyContent='center'
          alignItems='center'
          height='3rem'>
-      <H3 margin='0'>{props.title}</H3>
+      <H3 margin='0'></H3>
     </Div>
   </Div>
 )

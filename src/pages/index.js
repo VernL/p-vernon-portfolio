@@ -20,7 +20,7 @@ export default ({ data }) => (
            margin='0 auto'>
         <Div flexBasis= '300px'
              margin='1rem' >
-          <Polaroid img='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Mugshot.jpg' title='Vernon' />
+          <Polaroid img='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Mugshot.jpg' title='Me' />
         </Div>
       <Div flexBasis='450px'
            backgroundColor='#6ec6ff'
