@@ -1,0 +1,14 @@
+@import "../../sass/main";
+
+#footer {
+  background-color: $custom-secondary;
+  height: 65px;
+
+  div {
+    height: 100%;
+  }
+
+  div p {
+    margin: 0px;
+  }
+}

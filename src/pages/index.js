@@ -1,83 +1,103 @@
 import React from "react";
-import { H1, Div, H3, P} from 'glamorous'
-import Link from 'gatsby-link'
+import Link from "gatsby-link";
+import Polaroid from "../components/Poloroid/";
+import ProjectCard from "../components/ProjectCard";
 
-import Container from '../components/Container'
-import Polaroid from '../components/Poloroid'
-import Button from '../components/Button'
+import "./index.scss";
 
-export default ({ data }) => (
-  <div>
-    <Div backgroundColor='#2196f3'
-         marginTop='60px'>
-      <Container>
-      <Div display='flex'
-           flexWrap='wrap'
-           justifyContent='space-around'
-           alignItems='center'
-           maxWidth='960px'
-           minHeight='550px'
-           margin='0 auto'>
-        <Div flexBasis= '300px'
-             margin='1rem' >
-          <Polaroid img='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Mugshot.jpg' title='Me' />
-        </Div>
-      <Div flexBasis='450px'
-           backgroundColor='#6ec6ff'
-           boxShadow='10px 10px 10px 0px rgba(0, 0, 0, 0.4)'
-           margin='1rem'>
-        <P margin='1rem'>Full stack developer with a love for flying robots, Cleantech, and weekly food specials. Always learning new skills and giving 100% to get the job done.</P>
-        <Div display='flex'
-             justifyContent='center'>
-          <a href='https://s3.ca-central-1.amazonaws.com/vernon-portfolio/Vernon.lillies_CV.pdf' download>
-            <Button>Download CV (PDF)</Button>
-          </a>
-        </Div>
-      </Div>
-      </Div>
-      </Container>
-    </Div>
+import { Container, Row, Col } from "reactstrap";
 
-    <Container>
-      <H1 margin='3rem 0'
-          textAlign='center'>Projects</H1>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Div key={node.id}
-             css={{':hover':{borderLeft: '5px solid #6ec6ff'}}}
-             borderLeft='5px solid white'
-             margin='1.5rem 0'>
-          <Link
-          to={node.fields.slug}
-          css={{ textDecoration: 'none', color: 'inherit'}}>
-          <H3 margin='0'>
-            {node.frontmatter.title}{" "}
-          </H3>
-          <p>{node.excerpt}</p>
-          </Link>
-        </Div>
-      ))}
-    </Container>
-  </div>
+export default ({ data }) => {
+  return (
+    <div>
+      <section id="index-header">
+        <Container>
+          <Row className="justify-content-center">
+            <Col sm="4" xl="3" className="d-none d-sm-block">
+              <Polaroid sizes={data.mugshot.sizes} alt={data.mugshot.name} />
+            </Col>
+            <Col sm="8">
+              <div
+                className="summary"
+                dangerouslySetInnerHTML={{
+                  __html: data.summary.edges[0].node.childMarkdownRemark.html
+                }}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
-);
+      <section id="index-main">
+        <Container>
+          <h1>Projects</h1>
+          <Row>
+            {data.projects.edges.map(({ node }) => (
+              <Col
+                xs="12"
+                md="6"
+                xl="4"
+                key={node.childMarkdownRemark.frontmatter.title}
+              >
+                <ProjectCard
+                  slug={node.childMarkdownRemark.fields.slug}
+                  title={node.childMarkdownRemark.frontmatter.title}
+                  excerpt={node.childMarkdownRemark.excerpt}
+                  thumbnail={
+                    node.childMarkdownRemark.frontmatter.thumbnail
+                      .childImageSharp.sizes
+                  }
+                />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+    </div>
+  );
+};
 
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark {
-      totalCount
+    projects: allFile(
+      filter: { extension: { eq: "md" }, sourceInstanceName: { eq: "pages" } }
+    ) {
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
+          childMarkdownRemark {
+            id
+            frontmatter {
+              title
+              date(formatString: "DD MMMM, YYYY")
+              thumbnail {
+                childImageSharp {
+                  sizes(maxWidth: 400) {
+                    ...GatsbyImageSharpSizes
+                  }
+                }
+              }
+            }
+            fields {
+              slug
+            }
+            excerpt
           }
-           fields {
-            slug
-          }
-          excerpt
         }
       }
     }
+    summary: allFile(filter: { id: { regex: "/summary/" } }) {
+      edges {
+        node {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
+    mugshot: imageSharp(id: { regex: "/mugshot.jpg/" }) {
+      sizes(maxWidth: 630) {
+        ...GatsbyImageSharpSizes
+      }
+    }
   }
-`
+`;

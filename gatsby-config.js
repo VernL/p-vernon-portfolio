@@ -1,24 +1,38 @@
 module.exports = {
   siteMetadata: {
-    title: `Vernon Lillies`,
+    title: "vernonlillies.com",
     description: "Vernon's blog and portfolio",
-    siteUrl: "https://www.vernonlillies.com"
+    url: "https://www.vernonlillies.com",
+    twitter: "https://twitter.com/Vernon_Lillies",
+    github: "https://github.com/VernL",
+    linkedIn: "https://www.linkedin.com/in/vernon-lillies-a3172270",
+    author: {
+      name: "Vernon Lillies",
+      email: "vernon.lillies@gmail.com"
+    }
   },
   plugins: [
-    `gatsby-plugin-glamor`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`
+        precision: 8
       }
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        pathToConfigModule: `src/utils/typography`
+        name: `assets`,
+        path: `${__dirname}/src/assets/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`
       }
     },
     {

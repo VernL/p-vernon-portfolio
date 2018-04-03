@@ -1,0 +1,22 @@
+@import "../../sass/main";
+
+.card-img-overlay {
+  background-color: rgba($dark, 0.8);
+}
+
+.card-img-overlay:hover {
+  background-color: rgba($dark, 0.5);
+}
+
+
+.card {
+  height: 300px;
+}
+
+.gatsby-image-wrapper{
+   height: 100%;
+ }
+
+.gatsby-image-outer-wrapper{
+  height: 100%;
+}

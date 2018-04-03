@@ -1,0 +1,20 @@
+$theme-colors: (
+        primary: #2595FF,
+        secondary: #fff,
+        success: #5cb85c,
+        info: #5bc0de,
+        warning: #f0ad4e,
+        danger: #d9534f,
+        light: #f5f8fa,
+        dark: #122a38
+);
+
+$custom-primary: #6ec6ff;
+$custom-secondary: #2196f3;
+
+.row {
+  padding: 2rem 0;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import "~font-awesome/css/font-awesome.css";

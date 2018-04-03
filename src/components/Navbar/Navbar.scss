@@ -1,0 +1,20 @@
+@import "../../sass/main";
+
+#navbar {
+  height: 65px;
+}
+
+.navbar {
+  background-color: $custom-primary
+}
+
+a.nav-link{
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+}
+
+a.nav-link:hover{
+  border-bottom-color: $custom-secondary ;
+}
+
+

@@ -1,0 +1,23 @@
+@import "../sass/main";
+
+#index-header {
+  background-color: $custom-secondary;
+
+  .container{
+    margin-top:65px;
+  }
+
+  .summary{
+    background-color: $custom-primary;
+    padding: 2rem;
+    border-radius: 15px;
+  }
+}
+
+#index-main {
+  h1{
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+

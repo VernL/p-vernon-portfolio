@@ -1,42 +1,83 @@
 import React from "react";
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import {Div, H3 } from 'glamorous'
-import Social from '../components/Social'
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
 
-import 'prismjs/themes/prism.css'
+import NavBar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
-export default ({ children, data }) => (
-<div>
-  <Helmet
-    title={data.site.siteMetadata.title}/>
-  <Div display='flex'
-       alignItems='center'
-       height='60px'
-       marginTop='0'
-       backgroundColor='#6ec6ff'
-       position='fixed'
-       width='100%'
-       top='0'>
-    <Div flexBasis='960px'
-         margin='0 auto'
-         display='flex'
-      alignItems='center'>
-      <Link to='/' style={{boxShadow: 'none'}}>
-        <H3 margin='0'>{data.site.siteMetadata.title}</H3>
-      </Link>
-      <Social/>
-    </Div>
-  </Div>
+import "../sass/main.scss";
+
+const DefaultLayout = ({ children, data }) => (
+  <div>
+    <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        {
+          name: "description",
+          content: data.site.siteMetadata.description
+        },
+        {
+          name: "author",
+          content: data.site.siteMetadata.author.name
+        },
+        {
+          name: "copyright",
+          content: `&copy; ${data.site.siteMetadata.author.name} 2018`
+        },
+        {
+          property: "og:url",
+          content: data.site.siteMetadata.url
+        },
+        {
+          property: "og:type",
+          content: "website"
+        },
+        {
+          property: "og:title",
+          content: data.site.siteMetadata.title
+        },
+        {
+          property: "og:description",
+          content: data.site.siteMetadata.description
+        },
+        {
+          property: "og:site_name",
+          content: "thetravelshelf.com"
+        },
+        {
+          name: "twitter:card",
+          content: "summary"
+        },
+        {
+          name: "twitter:site",
+          content: data.site.siteMetadata.twitter
+        },
+        {
+          name: "twitter:title",
+          content: data.site.siteMetadata.title
+        }
+      ]}
+    />
+    <NavBar />
     {children()}
-</div>
-)
+    <Footer />
+  </div>
+);
+
+export default DefaultLayout;
 
 export const query = graphql`
   query LayoutQuery {
     site {
       siteMetadata {
         title
+        url
+        twitter
+        description
+        author {
+          name
+        }
       }
     }
-  }`
+  }
+`;
