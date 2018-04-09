@@ -7,11 +7,11 @@ thumbnail: "dq_2.jpg"
 
 In fall 2017, I joined the [LAB12](https://www.pitonneux.org/lab12/) self directed learning program. The program's main focus was to collaborate with a team and build a project. Along with a ton of programming experience, I learned agile development workflows and how to use github effectively. LAB12 was a lot of fun and I highly recommend it to anyone looking to level up their coding skills. Just be prepared to put in long hours to get your team across the finish line.
 
-![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180203214520580.png)
+![](ts_1.png)
 
 [The Travel Shelf](www.thetravelshelf.com) was born out of the LAB12 program. It's an open source project aiming to promote independent bookstores around the world. I worked on every aspect of the project including coding for the frontend and backend, creating user stories and managing the team. We created a single page application written in JavaScript using React with Redux on the frontend and a Node/Express backend. An overview of the project is shown in the diagram below.
 
-![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180203132819961.png)
+![](ts_2.png)
 
 Bookstore data was modeled using Mongoose and stored in a MongoDB database hosted on [mlab](https://mlab.com/). The backend API exposes a series of endpoints to communicate with the client:
 
@@ -141,6 +141,6 @@ export default connect(mapStateToProps) (StoreIndex)
 
 This is what it looks like in the browser:
 
-![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180203234532243.png)
+![](ts_3.png)
 
 The repository for the project is available [here](https://github.com/RichardLitt/the-travel-shelf). It's an open source project so feel free to browse, fork or contribute!

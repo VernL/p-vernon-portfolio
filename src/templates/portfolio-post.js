@@ -11,9 +11,7 @@ export default ({ data }) => {
       <Container>
         <Row className="justify-content-center">
           <Col xs="10">
-            <h1 margin="1rem 0" marginTop="2rem">
-              {post.frontmatter.title}
-            </h1>
+            <h1>{post.frontmatter.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </Col>
         </Row>

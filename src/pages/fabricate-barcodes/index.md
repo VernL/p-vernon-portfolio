@@ -7,7 +7,7 @@ thumbnail: "FabricateBarcodes.jpg"
 
 [Fabricate Barcodes](https://www.fabricateinc.com/barcodes) is an online storefront that sells barcodes. I was the backend developer and created an application written in JavaScript using Node.js. The application listens for incoming transactions, verifies and processes those transaction and finally emails the purchased barcodes to the client. Available barcodes are stored in an Amazon S3 bucket and transaction data is stored in a MongoDB database. An overview of the application is presented in the figure below.
 
-![](https://s3.ca-central-1.amazonaws.com/vernon-portfolio/20180131211608737.png)
+![](fb_1.png)
 
 Barcodes are purchased through the PayPal Express Checkout API. An Instant Payment Notification (IPN) is sent to the application when a payment is confirmed. Incoming transaction trigger a series of operations. The authenticity of the transaction is verified and the transaction is placed in a queue to be processed in sequence. See the code snippet below.
 
