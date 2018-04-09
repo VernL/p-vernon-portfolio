@@ -9,7 +9,7 @@ In fall 2017, I joined the [LAB12](https://www.pitonneux.org/lab12/) self direct
 
 ![](ts_1.png)
 
-[The Travel Shelf](www.thetravelshelf.com) was born out of the LAB12 program. It's an open source project aiming to promote independent bookstores around the world. I worked on every aspect of the project including coding for the frontend and backend, creating user stories and managing the team. We created a single page application written in JavaScript using React with Redux on the frontend and a Node/Express backend. An overview of the project is shown in the diagram below.
+[The Travel Shelf](http://www.thetravelshelf.com) was born out of the LAB12 program. It's an open source project aiming to promote independent bookstores around the world. I worked on every aspect of the project including coding for the frontend and backend, creating user stories and managing the team. We created a single page application written in JavaScript using React with Redux on the frontend and a Node/Express backend. An overview of the project is shown in the diagram below.
 
 ![](ts_2.png)
 
