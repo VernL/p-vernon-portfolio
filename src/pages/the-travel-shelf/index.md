@@ -4,6 +4,102 @@ date: "2018-01-30"
 link: "https://www.fabricateinc.com/barcodes"
 thumbnail: "dq_2.jpg"
 ---
+---
+### Update
+
+In an effort to simplify the project and encourage participation, I rebuilt The Travel Shelf with Gatsbyjs. Check out the live site [here](https://sharp-bose-ab73ce.netlify.com/) as well as the [source](https://github.com/VernL/p-gatsby-the-travel-shelf). 
+
+Gatsbyjs is a modern site generator powered by GraphQL. You can thing of Gatsby as the love child between Jekyll and React, that was sent to the future and came back with super powers. It's strength is in building static sites with React components using virtually any type of data source. It's fun, it's fast, and you should [check it out](https://gatsbyjs.org).
+
+The entire project is now self contained and can be hosted for free on Netlify. Also, using GraphQL queries removed the need for using Redux. The code bellow generates the cards for each post as well as display the most recent post on the front page.
+
+```javascript
+
+    <div>
+      <section id="portfolio">
+        <div className="container">
+          <h2 className="text-center">Welcome To The Travel Shelf</h2>
+          <hr align="center" width="30%" />
+          <p className="text-center header">
+            Browse Our Portfolio And Visit Your Local Independent Bookstores
+            Today!
+          </p>
+          <div className="row no-gutters d-flex flex-wrap justify-content-around align-items-baseline">
+            {allPosts.map(({ node }) => (
+              <StoreCard
+                key={node.frontmatter.title}
+                slug={node.fields.slug}
+                title={node.frontmatter.title}
+                excerpt={node.excerpt}
+                thumbnail={node.frontmatter.thumbnail.childImageSharp.sizes}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="featuredPost">
+        <div className="container">
+          <h2 className="text-center">Featured Bookstore</h2>
+          <hr align="center" width="30%" />
+          <h1 className="text-center">{latestPost.frontmatter.title}</h1>
+          <article className="post">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: latestPost.html
+              }}
+            />
+          </article>
+        </div>
+      </section>
+    </div>
+
+export default IndexPage;
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 400) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+    latestPost: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
+```
+
+---
 
 In fall 2017, I joined the [LAB12](https://www.pitonneux.org/lab12/) self directed learning program. The program's main focus was to collaborate with a team and build a project. Along with a ton of programming experience, I learned agile development workflows and how to use github effectively. LAB12 was a lot of fun and I highly recommend it to anyone looking to level up their coding skills. Just be prepared to put in long hours to get your team across the finish line.
 
