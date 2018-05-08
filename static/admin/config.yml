@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: VernL/p-vernon-portfolio
 
 media_folder: static/assets
 
