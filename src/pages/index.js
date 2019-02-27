@@ -29,7 +29,7 @@ export default ({ data }) => {
       </section>
 
       <section id="index-main">
-        <Container>
+        <Container>cd
           <h1>Projects</h1>
           <Row>
             {data.projects.edges.map(({ node }) => (

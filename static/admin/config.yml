@@ -3,6 +3,7 @@ backend:
   repo: VernL/p-vernon-portfolio
 
 media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: post
@@ -15,3 +16,4 @@ collections:
       - {name: url, label: URL}
       - {name: thumbnail, label: Thumbnail}
       - {name: body, label: Post, widget: markdown }
+      - {name: image, label: Image, widget: image }
